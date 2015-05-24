@@ -10,29 +10,6 @@
 		<meta name="description" content="My name is Zihao Zhang. University of Waterloo Computer Science student. Competitive Programmer.">
 		<meta name="author" content="Zihao Zhang">
 		<meta name="HandheldFriendly" content="True">
-		<meta property="og:site_name" content="Zihao Zhang's Blog">
-		<meta property="og:title" content="Zihao Zhang's Blog">
-		<meta property="og:description" content="My name is Zihao Zhang. University of Waterloo Computer Science student. Competitive Programmer.">
-		<meta property="og:image" content="//zihao.me/img/favicon.png">
-		<meta property="og:type" content="website">
-		<meta property="og:url" content="http://blog.zihao.me">
-		<meta name="twitter:card" content="summary">
-		<meta name="twitter:title" content="Zihao Zhang's Blog">
-		<meta name="twitter:description" content="My name is Zihao Zhang. University of Waterloo Computer Science student. Competitive Programmer.">
-		<meta name="twitter:url" content="http://blog.zihao.me">
-
-		<script type="application/ld+json">
-		{
-		  "@context": "http://schema.org",
-		  "@type": "Person",
-		  "name": "Zihao Zhang",
-		  "born": "1996-12-27",
-		  "jobTitle": "Student",
-		  "telephone": "(519) 722-9612",
-		  "url": "http://zihao.me",
-		  "description": "My name is Zihao Zhang. University of Waterloo Computer Science Student. Competitive Programmer."
-		}
-		</script>
 
 		<link rel="shortcut icon" href="//zihao.me/img/favicon.png">
 
@@ -72,7 +49,17 @@
 		<script type="text/javascript" src="{{asset "js/jquery.ghostHunter.min.js"}}"></script>
 		<script type="text/javascript" src="{{asset "js/prism.js"}}"></script>
 		<script type="text/javascript" src="{{asset "js/min.v.js"}}"></script>
-		{{!-- 增加谷歌统计 --}}
-		<script src="//zihao.me/js/ga.js"></script>
+
+		<script type="text/javascript">
+			var disqus_shortname = 'zihaosblog';
+			/* * * DON'T EDIT BELOW THIS LINE * * */
+			(function () {
+			var s = document.createElement('script'); s.async = true;
+			s.type = 'text/javascript';
+			s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+			(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+			}());
+		</script>
+
 	</body>
 </html>
