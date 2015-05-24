@@ -12,8 +12,19 @@
 		<meta name="HandheldFriendly" content="True">
 
 		<link rel="shortcut icon" href="//zihao.me/img/favicon.png">
+		<link rel="apple-touch-icon" href="//zihao.me/img/apple-touch-icon.png">
 
-		{{! Styles'n'Scripts }}
+		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
+		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/css/bootstrap.min.css">
+
+		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/js/bootstrap.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.5/socket.io.min.js"></script>
+
+		<link rel="stylesheet" href="//zihao.me/css/main.css">
+
+
 		<link rel="stylesheet" type="text/css" href="{{asset "/css/min.style.css"}}">
 		<link href='http://fonts.googleapis.com/css?family=Exo:100,400' rel='stylesheet' type='text/css'>
         <!--[if lte IE 8]>
@@ -25,24 +36,35 @@
 	<body class="{{body_class}}">
 		{{{body}}}
 
-		<footer class="site-footer">
-		<div class="feed-sub">
-			<a class="subscribe icon-feed" href="{{@blog.url}}/rss/"><span class="tooltip">{{!-- Subscribe --}}</span></a>
-			<i class="iconfont icon-feed">&#xe751;</i>
-		</div>
-		<div class="inner">
-			<section class="copyright"><a href="{{@blog.url}}/">{{@blog.title}}</a> &copy; {{date format="YYYY"}} &bull; All rights reserved.</section>
-			<section>
-			Designed by <a href="http://zihao.me">@zzh8829</a>
-			</section>
-			<section class="poweredby">Powered by <a class="icon-ghost" href="http://ghost.org">Ghost</a></section>
+		<footer role="contentinfo">
+		<div class="container">
+		    <div class="main-social">
+		        <ul class = "main-social-buttons">
+		        <a href="https://github.com/zzh8829" target="_blank"><li><i class="social fa fa-github-square fa-2x social-gh"></i></li></a>
+		        <a href="http://quora.com/Zihao-Zhang" target="_blank"><li><img class="social fa fa-2x social-quora" src="/img/quora-64-gray.png"></img></li></a>
+		        <a href="https://twitter.com/zzh8829" target="_blank"><li><i class="social fa fa-twitter-square fa-2x social-twitter"></i></li></a>
+		        <a href="https://linkedin.com/in/zzh8829" target="_blank"><li><i class="social fa fa-linkedin-square fa-2x social-linkedin"></i></li></a>
+		        <a href="mailto:zzh8829@gmail.com"><li><i class="social fa fa-envelope-square fa-2x social-email"></i></li></a>
+		        <a href="https://steamcommunity.com/id/zzh8829" target="_blank"><li><i class="social fa fa-steam-square fa-2x social-steam"></i></li></a>
+		        <a href="https://www.facebook.com/zihao.pro.zhang" target="_blank"><li><i class="social fa fa-facebook-square fa-2x social-facebook"></i></li></a>
+		        <a href="https://plus.google.com/108091426289970576616" target="_blank"><li><i class="social fa fa-google-plus-square fa-2x social-googleplus"></i></li></a>
+		        <a href="https://www.youtube.com/user/zzhist" target="_blank"><li><i class="social fa fa-youtube-square fa-2x social-youtube"></i></li></a>
+		        <a href="https://instagram.com/zzihaoz" target="_blank"><li><i class="social fa fa-instagram fa-2x social-instagram"></i></li></a>
+		        <a href="https://www.pinterest.com/zzh8829" target="_blank"><li><i class="social fa fa-pinterest-square fa-2x social-pinterest"></i></li></a>
+		        <a href="https://www.tumblr.com/blog/zzh8829" target="_blank"><li><i class="social fa fa-tumblr-square fa-2x social-tumblr"></i></li></a>
+		        <a href="www.last.fm/user/zzh8829" target="_blank"><li><i class="social fa fa-lastfm-square fa-2x social-lastfm"></i></li></a>
+		        </ul>
+		    </div>
+		    <p>Designed and built with love by <a href="https://twitter.com/zzh8829" target="_blank">@zzh8829</a>.</p>
+		    <p>Powered by <a href="http://ghost.org">Ghost</a>
+		    <a class="admin-link" href="/ghost">Admin</a>
+		    </p>
 		</div>
 		</footer>
 
 		{{! Ghost outputs important scripts and data with this tag }}
 		{{ghost_foot}}
-        {{!-- 转场动画 --}}
-		{{! The main JavaScript file for Casper }}
+		{{! The main JavaScript files }}
 		<script type="text/javascript" src="http://upcdn.b0.upaiyun.com/libs/jquery/jquery-2.0.3.min.js"></script>
 		<script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
 		<script type="text/javascript" src="{{asset "js/jquery.stellar.min.js"}}"></script>
@@ -50,6 +72,7 @@
 		<script type="text/javascript" src="{{asset "js/prism.js"}}"></script>
 		<script type="text/javascript" src="{{asset "js/min.v.js"}}"></script>
 
+		{{ ! Disqus comment count }}
 		<script type="text/javascript">
 			var disqus_shortname = 'zihaosblog';
 			/* * * DON'T EDIT BELOW THIS LINE * * */
