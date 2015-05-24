@@ -8,12 +8,15 @@ for more info. Please contact [@zzh8829](http://twitter.com/zzh8829).
 ####Notice
 
 If you want to use this theme, please change the Google Analytics ID in `default.hbs`.
+
 If you need to migrate from wordpress, please change `data-url` in JavaScript file to the address of your original blog.
+
 Please also change meta tags in `default.hbs`
 
 ####About ghost-freewill
 
-This theme is called [freewill](https://github.com/zzh8829/ghost-freewill)
+This theme is called [freewill](https://github.com/zzh8829/ghost-freewill).
+
 It is completely opensource, welcome fork and pull requests.
 
 I will translate rest of the documentation soon in future.

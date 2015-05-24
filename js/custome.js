@@ -4,14 +4,14 @@
 */
 
 /*设定一些常用的参数*/
-var _siteDomain=  'luolei.org' || window.location.host;
+var _siteDomain=  'zihao.me' || window.location.host;
 
 /*迁移多说Wordpress评论到Ghost
 * 尼玛这遇到坑啊，还要自己写插件处理这个评论的迁移
     */
-    var  duoshuoTrans= window.location.pathname;
-    $('.ds-thread').attr('data-url','http://blog.luolei.org'+duoshuoTrans);
-    //document.getElementsByClassName('ds-thread').setAttribute('data-url','http://luolei.org'+duoshuoTrans);
+//var  duoshuoTrans= window.location.pathname;
+//$('.ds-thread').attr('data-url','http://blog.luolei.org'+duoshuoTrans);
+//document.getElementsByClassName('ds-thread').setAttribute('data-url','http://luolei.org'+duoshuoTrans);
 
 
 /*图片延迟加载*/
@@ -42,12 +42,11 @@ function cleanMask(){
 }
 
 $('.post-cover-info').hover(function(){
-    console.log('清楚遮罩');
+    console.log('clear cover');
     cleanMask();
 })
 
 /*顶部遮罩效果*/
-
 
 
 var visualContainerWidh=$(window).width();
@@ -60,9 +59,9 @@ function checkImg(img){
         isMarkWrap=false;//只有作者标记wrap class才会全宽显示
         if($(img).hasClass('wrap') == true){
             isMarkWrap = true;
-            console.log('wrap标记');
+            console.log('wrap sign');
         }else{
-            console.log('不满足wrap');
+            console.log('not enough for wrap');
             return;
         }
 
@@ -101,7 +100,6 @@ $('.single-post-inner img').each(function(){
     }
      checkImg(_img);
 });
-
 
 
 /*处理iframe宽度*/
@@ -253,7 +251,7 @@ var searchField = $(".search-form-input").ghostHunter({
     results   : ".quick-search",
     onKeyUp         : true,
     result_template : "<a  class='searchResult' href='{{link}}'>{{title}}</a>",
-    info_template   : "<h4>找到{{amount}}篇相关的文章</h4>",
+    info_template   : "<h4>Found{{amount}}related articles</h4>",
     rss            : "/rss",
     //displaySearchInfo   : false,
     zeroResultsInfo     : false
@@ -304,7 +302,7 @@ $(document).ready(function(){
 $('.post-cover-info').addClass('animated fadeInDownBig');
 
 $('.post-template').ready(function(){
-    console.log('文章页面加载完毕');
+    console.log('finished loading article page');
     //cleanMask();
     //$('.post-header-mask').delay(9000).css('opacity','0');
 })
@@ -314,7 +312,7 @@ $('.post-template').ready(function(){
  $(window).stellar();
 
     /*返回顶部*/
-    var STR_TO_TOP='我要飞到最高';
+    var STR_TO_TOP='Back To Top';
     var coverHeight=$(window).height();//获得图片高度
         $('.cover-slide-more').click(function(){
             $('html,body').animate({scrollTop:coverHeight},500);
@@ -326,7 +324,7 @@ $('.post-template').ready(function(){
             $('.post-cover-info').addClass('animated fadeOutUp');
             $('.cover-slide-more h4').show().addClass('animated fadeInDown');
         },function(){
-            console.log('重现');
+            console.log('reappear');
             $(this).removeClass('hoverLight');
             $('.post-cover-info').removeClass('fadeOutUp');
             $('.post-cover-info').addClass('fadeInDown');
@@ -347,7 +345,7 @@ $('.post-template').ready(function(){
         },1000,function(){
             window.location.hash='#';
         });
-        console.log('我跳');
+        console.log('JUMP!');
      })
     })
 

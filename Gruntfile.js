@@ -12,7 +12,7 @@ module.exports=function(grunt){
         },
         buildType:'Build',
         pkg: grunt.file.readJSON('package.json'),
-        archive_name: grunt.option('name') || 'StaticPage项目名称',//此处可根据自己的需求修改
+        archive_name: grunt.option('name') || 'ghost-freewill',//此处可根据自己的需求修改
 
         //清理掉开发时才需要的文件
         clean: {
@@ -35,7 +35,7 @@ module.exports=function(grunt){
         compress:{
             main:{
                 options:{
-                    archive:'<%= archive_name %>-<%= grunt.template.today("yyyy") %>年<%= grunt.template.today("mm") %>月<%= grunt.template.today("dd") %>日<%= grunt.template.today("h") %>时<%= grunt.template.today("TT") %>.zip'
+                    archive:'<%= archive_name %>_<%= grunt.template.today("yyyy") %>-<%= grunt.template.today("mm") %>-<%= grunt.template.today("dd") %>_<%= grunt.template.today("h") %><%= grunt.template.today("TT") %>.zip'
                 },
                 expand:true,
                 cwd:'build/',
@@ -120,7 +120,7 @@ module.exports=function(grunt){
                 livereload:true,
                 //显示日志
                 dateFormate:function(time){
-                    grunt.log.writeln('编译完成,用时'+time+'ms ' + (new Date()).toString());
+                    grunt.log.writeln('Compile finished, time: '+time+'ms ' + (new Date()).toString());
                     grunt.log.writeln('Wating for more changes...');
                 }
             },
@@ -144,26 +144,11 @@ module.exports=function(grunt){
             }
 
         },
-
-        //发布到FTP服务器 : 请注意密码安全，ftp的帐号密码保存在主目录 .ftppass 文件
-        'ftp-deploy': {
-          build: {
-            auth: {
-              host: 'yourftp.domain.com',
-              port: 21,
-              authKey: 'key1'
-            },
-            src: 'build',
-            dest: '/home/ftp/demo',
-            exclusions: ['path/to/source/folder/**/.DS_Store', 'path/to/source/folder/**/Thumbs.db', 'path/to/dist/tmp']
-          }
-        }
-
     });
 
   //输出进度日志
   grunt.event.on('watch', function(action, filepath, target) {
-    grunt.log.writeln(target + ': ' + '文件: '+filepath + ' 变动状态: ' + action);
+    grunt.log.writeln(target + ': ' + 'File: '+filepath + ' Status: ' + action);
   });
 
     grunt.loadNpmTasks('grunt-contrib-clean');
@@ -174,12 +159,13 @@ module.exports=function(grunt){
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-htmlmin');
+    grunt.loadNpmTasks('grunt-ssh');
 
     grunt.registerTask('default', ['cssmin','uglify','htmlmin','copy:images']);
     grunt.registerTask('sass', ['sass:admin','cssmin']);
     //执行 grunt bundle --最终输出的文件 < name-生成日期.zip > 文件
     grunt.registerTask('bundle', ['clean:pre','copy:images', 'copy:main','cssmin','copy:archive', 'clean:post','htmlmin','compress',]);
-    //执行 grunt publish 可以直接上传项目文件到指定服务器FTP目录
-    grunt.registerTask('publish', ['ftp-deploy']);
+
+    //grunt.registerTask('publish', ['sshexec:deploy']);
 
 };
