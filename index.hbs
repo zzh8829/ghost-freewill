@@ -1,41 +1,39 @@
 {{!< default}}
-<div class="fixed-body-background"></div>
 
 {{! The main content area on the homepage }}
 <main id="container" class="content homepage" role="main">
-{{! Each post will be output using this markup }}
-{{#foreach posts}}
+    {{! Each post will be output using this markup }}
+    {{#foreach posts}}
+        <article class="post-in-list {{post_class}}">
+            <section class="post-excerpt">
+                <div class="post-image">
+                    <a href="{{url}}">
+                    {{content words="0"}}
+                    </a>
+                </div>
+                <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
+                <div class="excerpt-word hidden">
+                    {{excerpt}}
+                </div>
+            </section>
 
-<article class="post-in-list {{post_class}}">
-<section class="post-excerpt">
-<div class="post-image">
-<a href="{{url}}">
-{{content words="0"}}
-</a>
-</div>
-<h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
-<div class="excerpt-word hidden">
-{{excerpt}}
-</div>
-</section>
+            <div class="post-meta">
+                <span class="post-time"><time datetime="{{date format='YYYY-MM--DD'}}">{{date format="DD MMM YYYY"}}</time></span>
+                <span class="post-tags"> {{#if tags}}{{tags prefix="" separator=" "}}{{/if}} </span>
+                <span class="post-cmt"><a href="{{url}}#disqus_thread">Comments</a></span>
+            </div>
 
-<div class="post-meta">
-    <span class="post-time"><time datetime="{{date format='YYYY-MM--DD'}}">{{date format="DD MMM YYYY"}}</time></span>
-    <span class="post-tags"> {{#if tags}}{{tags prefix="" separator=" "}}{{/if}} </span>
-    <span class="post-cmt"><a href="{{url}}#disqus_thread">Comments</a></span>
-</div>
+            </div>
+            {{!--         <div class="readmore-btn">
+                <a class="btn" href="{{{url}}}" rel="bookmark"></a>
+            		</div> --}}
+        </article>
 
-</div>
-{{!--         <div class="readmore-btn">
-	<a class="btn" href="{{{url}}}" rel="bookmark"></a>
-		</div> --}}
-		</article>
+    {{/foreach}}
 
-{{/foreach}}
+    {{!! After all the posts, we have the previous/next pagination links }}
 
-{{!! After all the posts, we have the previous/next pagination links }}
-
-{{pagination}}
+    {{! pagination}}
 </main>
 
 

@@ -168,13 +168,13 @@ $('.single-post-inner iframe, .single-post-inner frame, .single-post-inner video
 $('.post-excerpt .post-title').each(function(){
 
     $(this).hover(function(){
-        console.log('出现');
+        console.log('on');
         var _this=$(this);
         // _this.removeClass('hidden');
         // targetExcerpet=_this.closest('.post-excerpt').children('.excerpt-word');
         //targetExcerpet.show();//.addClass('animated fadeIn');
     },function(){
-        console.log('消失');
+        console.log('off');
         var _this=$(this);
         // targetExcerpet=_this.closest('.post-excerpt').children('.excerpt-word');
         // targetExcerpet.removeClass('fadeInDown').addClass('fadeOutUp').hide();
@@ -197,14 +197,6 @@ $(window).resize(function() {
 
 /*顶部向下滚动*/
 
-
-/*如果没有tag，则默认隐藏*/
-$('.post-meta .post-tags').each(function(){
-    var _this=$(this);
-    if(_this.children().length == 0){
-        _this.addClass('hidden');
-    }
-})
 
 // $(document).bind('scroll', fader);
 
@@ -243,28 +235,6 @@ function urlIconlize(url){
 function isSiteDomain(url){
 
 }
-
-
-/*增加搜索功能*/
-
-var searchField = $(".search-form-input").ghostHunter({
-    results   : ".quick-search",
-    onKeyUp         : true,
-    result_template : "<a  class='searchResult' href='{{link}}'>{{title}}</a>",
-    info_template   : "<h4>Found{{amount}}related articles</h4>",
-    rss            : "/rss",
-    //displaySearchInfo   : false,
-    zeroResultsInfo     : false
-});
-
-$('.search-form-input').focus(function(){
-    $('.search-bar-result').css({'visibility':'visible','opacity':'1'});
-});
-
-$('.search-form-input').blur(function(){
-    $('.search-bar-result').css({'visibility':'hidden','opacity':'0'});
-});
-
 
 /*窗口重新变化的时候*/
 
