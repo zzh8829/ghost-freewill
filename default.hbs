@@ -34,6 +34,31 @@
 		{{ghost_head}}
 	</head>
 	<body class="{{body_class}}">
+		<div class="wrapper">
+
+        <header class="navbar navbar-static-top main-nav" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="/" class="navbar-brand">Zihao Zhang</a>
+                </div>
+                <nav class="collapse navbar-collapse bs-navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="http://blog.zihao.me">Blog</a></li>
+                        <li><a href="http://seafile.zihao.me">Cloud</a></li>
+                        <li><a href="https://github.com/zzh8829?tab=repositories">Projects</a></li>
+						<li><a href="//zihao.me/static/resume.pdf" target="_blank">Resume</a></li>
+                        <li><a href="mailto:zzh8829@gmail.com">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
 		{{{body}}}
 
 		<footer role="contentinfo">
@@ -41,7 +66,7 @@
 		    <div class="main-social">
 		        <ul class = "main-social-buttons">
 		        <a href="https://github.com/zzh8829" target="_blank"><li><i class="social fa fa-github-square fa-2x social-gh"></i></li></a>
-		        <a href="http://quora.com/Zihao-Zhang" target="_blank"><li><img class="social fa fa-2x social-quora" src="/img/quora-64-gray.png"></img></li></a>
+		        <a href="http://quora.com/Zihao-Zhang" target="_blank"><li><img class="social fa fa-2x social-quora" src="//zihao.me/img/quora-64-gray.png"></img></li></a>
 		        <a href="https://twitter.com/zzh8829" target="_blank"><li><i class="social fa fa-twitter-square fa-2x social-twitter"></i></li></a>
 		        <a href="https://linkedin.com/in/zzh8829" target="_blank"><li><i class="social fa fa-linkedin-square fa-2x social-linkedin"></i></li></a>
 		        <a href="mailto:zzh8829@gmail.com"><li><i class="social fa fa-envelope-square fa-2x social-email"></i></li></a>
@@ -61,6 +86,8 @@
 		    </p>
 		</div>
 		</footer>
+
+		</div>
 
 		{{! Ghost outputs important scripts and data with this tag }}
 		{{ghost_foot}}
